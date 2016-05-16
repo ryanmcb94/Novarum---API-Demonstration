@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novarum-APIDemonstration", "Novarum-APIDemonstration\Novarum-APIDemonstration.csproj", "{1ECD43AD-C961-4F62-9190-0A859907474A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novarum-APIDemonstration.Droid", "Droid\Novarum-APIDemonstration.Droid.csproj", "{DD213966-A7E2-4442-A9D9-5F6C174A255A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1ECD43AD-C961-4F62-9190-0A859907474A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ECD43AD-C961-4F62-9190-0A859907474A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ECD43AD-C961-4F62-9190-0A859907474A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ECD43AD-C961-4F62-9190-0A859907474A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD213966-A7E2-4442-A9D9-5F6C174A255A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD213966-A7E2-4442-A9D9-5F6C174A255A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD213966-A7E2-4442-A9D9-5F6C174A255A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD213966-A7E2-4442-A9D9-5F6C174A255A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
