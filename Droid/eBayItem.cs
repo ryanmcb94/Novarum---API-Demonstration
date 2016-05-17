@@ -58,7 +58,8 @@ namespace NovarumAPIDemonstration.Droid
 		public int CompareTo (object obj)
 		{
 			CurrentPrice cp = (CurrentPrice)obj;
-			return this.__value__.CompareTo (cp.__value__);
+			return double.Parse (this.__value__).CompareTo (double.Parse (cp.__value__));
+
 		}
 	}
 

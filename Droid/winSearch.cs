@@ -16,11 +16,16 @@ using System.Diagnostics;
 
 namespace NovarumAPIDemonstration.Droid
 {
+	/// <summary>
+	/// Notes.
+	/// Tested on Galaxy S6 Edge.
+	/// Content in eBayItem is based on Autogen code from http://json2csharp.com/
+	/// Click on No Sort to select sort, click on item to be taken to the eBay website.
+	/// </summary>
 	[Activity (Label = "eBay Search", Icon = "@drawable/icon", MainLauncher = true)]			
 	public class winSearch : Activity
 	{
 		private Button btnSearch;
-		private ImageView image;
 		private EditText txtSearch;
 
 		protected override void OnCreate (Bundle savedInstanceState)
@@ -35,13 +40,10 @@ namespace NovarumAPIDemonstration.Droid
 			this.btnSearch.Click += delegate { //Search, then navigate to results window.
 				if(txtSearch.Text !="")
 				{
-					eBayAPIWrapper.getService().findItem(txtSearch.Text);
+					eBayAPIWrapper.getService().findItem(txtSearch.Text,this);
 					StartActivity(typeof(winResults));
 				}
 			};
-
-				
-				//this.image.SetImageResource (Resource.Drawable.ebaylogo);
 			
 		}
 	}

@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Json;
 using Android.Widget;
 using System.Collections.Generic;
 using System.Linq;
+using Android.Content;
 
 namespace NovarumAPIDemonstration.Droid
 {
@@ -13,6 +14,7 @@ namespace NovarumAPIDemonstration.Droid
 	/// </summary>
 	public class eBayAPIWrapper
 	{
+		public Context  con { get; set; }
 		private static eBayAPIWrapper eBayService;
 		public SearchResult results {get;set;}
 
@@ -42,17 +44,31 @@ namespace NovarumAPIDemonstration.Droid
 		/// Searches eBay for any items matching query
 		/// </summary>
 		/// <param name="searchQuery">Search query.</param>
-		public void findItem(string searchQuery)
+		public void findItem(string searchQuery,Context con)
 		{
+			this.con = con;
 			string call = String.Format("http://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=RyanMcBr-NovarumT-PRD-34d8cb02c-29785617&OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords={0}%203g",searchQuery);
 			HttpWebRequest request = WebRequest.Create(call) as HttpWebRequest;
-			using(HttpWebResponse responce = request.GetResponse() as HttpWebResponse) // Make API Call
+			int attempts = 0;
+			while (attempts < 4) 
 			{
-				//Get Data
-				DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(RootObject));
-				object data = jsonSerializer.ReadObject(responce.GetResponseStream());
-				RootObject ro = (RootObject)data;
-				this.results = ro.findItemsByKeywordsResponse [0].searchResult[0];
+				try 
+				{
+					using (HttpWebResponse responce = request.GetResponse () as HttpWebResponse) 
+					{ // Make API Call
+						//Get Data
+						DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer (typeof(RootObject));
+						object data = jsonSerializer.ReadObject (responce.GetResponseStream ());
+						RootObject ro = (RootObject)data;
+						this.results = ro.findItemsByKeywordsResponse [0].searchResult [0];
+						attempts = 4;
+					}	
+				}
+				catch (Exception e) 
+				{
+					attempts++;
+					Toast.MakeText (this.con,"Request Failed: Retrying. Attempt Number: " + attempts.ToString(), ToastLength.Short).Show ();
+				}
 			}
 			validate ();
 		}

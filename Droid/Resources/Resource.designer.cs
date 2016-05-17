@@ -67,20 +67,17 @@ namespace NovarumAPIDemonstration.Droid
 			// aapt resource value: 0x7f050005
 			public const int Query = 2131034117;
 			
-			// aapt resource value: 0x7f05000a
-			public const int btnSearch = 2131034122;
+			// aapt resource value: 0x7f050009
+			public const int btnSearch = 2131034121;
 			
 			// aapt resource value: 0x7f050004
 			public const int imgIcon = 2131034116;
 			
-			// aapt resource value: 0x7f050008
-			public const int imgLogo = 2131034120;
+			// aapt resource value: 0x7f050007
+			public const int imgLogo = 2131034119;
 			
 			// aapt resource value: 0x7f050006
 			public const int listCustom = 2131034118;
-			
-			// aapt resource value: 0x7f050007
-			public const int resultsSwipeMenu = 2131034119;
 			
 			// aapt resource value: 0x7f050002
 			public const int txtCondition = 2131034114;
@@ -91,8 +88,8 @@ namespace NovarumAPIDemonstration.Droid
 			// aapt resource value: 0x7f050003
 			public const int txtPrice = 2131034115;
 			
-			// aapt resource value: 0x7f050009
-			public const int txtSearch = 2131034121;
+			// aapt resource value: 0x7f050008
+			public const int txtSearch = 2131034120;
 			
 			// aapt resource value: 0x7f050000
 			public const int txtTitle = 2131034112;

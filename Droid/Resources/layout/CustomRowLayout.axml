@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip" />
-    <TextView
-        android:id="@+id/txtCost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip" />
-    <TextView
-        android:id="@+id/txtCondition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip" />
-    <TextView
-        android:id="@+id/txtPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dip" />
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/imgIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip">
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip"
+            android:ellipsize="none"
+            android:maxLines="100"
+            android:scrollHorizontally="false"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/txtCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip" />
+        <TextView
+            android:id="@+id/txtCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip"
+            android:textColor="@android:color/black" />
     </LinearLayout>
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textColor="@android:color/black"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp" />
+    <TextView
+        android:editable="false"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/background_dark" />
+</RelativeLayout>
