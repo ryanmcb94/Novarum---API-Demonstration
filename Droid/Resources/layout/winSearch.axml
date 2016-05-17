@@ -1,8 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:weightSum="100"
+    android:background="@android:color/background_light">
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:src="@drawable/logo"
+        android:layout_height="0dp"
+        android:layout_weight="65"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true" />
+    <EditText
+        android:id="@+id/txtSearch"
+        android:hint="Search for Items"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="15"
+        android:editable="true"
+        android:textColorHint="@android:color/darker_gray"
+        android:textColor="@android:color/black" />
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_height="0dp"
+        android:text="Search eBay"
+        android:layout_width="match_parent"
+        android:layout_weight="15" />
 </LinearLayout>
-
